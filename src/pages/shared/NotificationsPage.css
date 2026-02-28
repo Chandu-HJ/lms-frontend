@@ -1,0 +1,114 @@
+.notificationsPage {
+  display: grid;
+  gap: 16px;
+}
+
+.notificationsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.notificationsHeader h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #0f172a;
+}
+
+.notificationsHeader p {
+  margin: 0;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.notificationsHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notificationsMarkAllBtn {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notificationsMarkAllBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.notificationsEmpty {
+  margin: 0;
+  color: #64748b;
+}
+
+.notificationsList {
+  display: grid;
+  gap: 12px;
+}
+
+.notificationCard {
+  border-radius: 12px;
+  border: 1px solid #dbe7ff;
+  background: #fff;
+  padding: 14px;
+}
+
+.notificationUnread {
+  background: #eff6ff;
+}
+
+.notificationRead {
+  background: #fff;
+}
+
+.notificationCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.notificationCardTop h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.notificationCardTop span {
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.notificationCard p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+.notificationCard button {
+  margin-top: 10px;
+  border: 1px solid #1d4ed8;
+  color: #1d4ed8;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.notificationReadLabel {
+  color: #0f766e;
+  font-weight: 600;
+}

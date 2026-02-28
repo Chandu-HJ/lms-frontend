@@ -1,0 +1,190 @@
+.wrapper {
+  background: #ffffff;
+  border: 1px solid #d9e2f2;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topBar h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 8px 0 14px;
+  color: #475569;
+}
+
+.backBtn,
+.actions button,
+.questionActions button,
+.saveBtn,
+.deleteBtn {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.aiRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.aiPrompt {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.aiPromptLabel {
+  font-size: 0.88rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.aiCountInput {
+  width: 130px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 10px;
+  height: 34px;
+}
+
+.aiGetBtn {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 10px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 12px;
+  color: #334155;
+}
+
+.metaGrid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: minmax(240px, 2fr) minmax(220px, 1fr) minmax(180px, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  min-height: 42px;
+  padding: 0 12px;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.questionActions {
+  margin-top: 14px;
+}
+
+.questionList {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.questionCard {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  padding: 14px;
+}
+
+.questionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.questionHeader h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.deleteBtn {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.options {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.optionRow {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.saveBar {
+  margin-top: 14px;
+}
+
+.saveBtn {
+  background: #1d4ed8;
+  color: #fff;
+  border-color: #1d4ed8;
+}
+
+@media (max-width: 1000px) {
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,250 @@
+.studentDashWrap {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.studentLoader,
+.studentEmpty {
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 14px;
+  color: #334155;
+}
+
+.studentSection {
+  background: #fff;
+  border: 1px solid #d9e2f2;
+  border-radius: 16px;
+  padding: 16px;
+  min-width: 0;
+}
+
+.studentSectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.studentSectionActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.studentSection h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+.studentSectionHead span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.studentCourseCard {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  min-width: 0;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.studentCourseCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.1);
+}
+
+.studentCourseCard.isClickable {
+  cursor: pointer;
+}
+
+.studentCourseCard.isClickable:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.studentCarouselShell {
+  position: relative;
+}
+
+.studentCarouselTrack {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 320px);
+  gap: 14px;
+  overflow-x: auto;
+  padding: 4px 4px 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 #e2e8f0;
+}
+
+.studentCarouselSlide {
+  scroll-snap-align: start;
+}
+
+.studentCarouselControls {
+  display: flex;
+  gap: 6px;
+}
+
+.studentCarouselBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.studentCarouselBtn:hover {
+  background: #e2e8f0;
+}
+
+.studentCarouselTrack::-webkit-scrollbar {
+  height: 8px;
+}
+
+.studentCarouselTrack::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 999px;
+}
+
+.studentCarouselTrack::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+.studentCarouselTrack::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+.studentCourseItem {
+  min-width: 0;
+}
+
+.studentCover {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.studentCardBody {
+  padding: 12px;
+}
+
+.studentCardBody h4 {
+  margin: 0 0 8px;
+  color: #0f172a;
+}
+
+.studentCardBody p {
+  margin: 0 0 6px;
+  color: #475569;
+}
+
+.studentMetaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  color: #0f172a;
+}
+
+.studentTypeBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+}
+
+.studentTypeBadge.isFree {
+  color: #065f46;
+  background: #d1fae5;
+  border-color: #6ee7b7;
+}
+
+.studentTypeBadge.isPaid {
+  color: #7c2d12;
+  background: #ffedd5;
+  border-color: #fdba74;
+}
+
+.progressWrap {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: #dbe3ef;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progressBar {
+  height: 100%;
+  min-width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb 0%, #06b6d4 48%, #22c55e 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25) inset;
+}
+
+.progressHead {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #334155;
+  font-size: 0.8rem;
+}
+
+.progressHead strong {
+  color: #0f172a;
+  font-size: 0.9rem;
+}
+
+.continueBtn {
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #1d4ed8;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .studentSectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .studentSectionActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .studentCarouselTrack {
+    grid-auto-columns: 84%;
+  }
+}

@@ -1,0 +1,139 @@
+.wrapper {
+  background: #ffffff;
+  border: 1px solid #d9e2f2;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topBar h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: #475569;
+}
+
+.refreshBtn {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.refreshBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.totalCard {
+  margin-top: 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #f1f5ff;
+  padding: 12px;
+}
+
+.totalLabel {
+  margin: 0;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.totalValue {
+  margin: 4px 0 0;
+  color: #0f172a;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.headerRow {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1.8fr) repeat(3, minmax(120px, 1fr)) minmax(180px, 1.2fr);
+  gap: 10px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #f8fbff;
+  padding: 8px 10px;
+}
+
+.headerRow p {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.list {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.8fr) repeat(3, minmax(120px, 1fr)) minmax(180px, 1.2fr);
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.courseTitle {
+  margin: 0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.metric {
+  margin: 0;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.studentsBtn {
+  justify-self: start;
+  border: 1px solid #93c5fd;
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.message {
+  margin-top: 10px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 12px;
+  color: #334155;
+}
+
+@media (max-width: 1050px) {
+  .headerRow {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

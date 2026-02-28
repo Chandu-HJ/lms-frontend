@@ -1,0 +1,16 @@
+.pageBackButton {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pageBackButton:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}

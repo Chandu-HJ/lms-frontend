@@ -1,0 +1,72 @@
+.sidebar {
+  width: 260px;
+  background-color: #111827; /* Dark neutral color */
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.logoSection {
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid #1f2937;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6366f1; /* Primary purple/indigo */
+}
+
+.nav {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  color: #9ca3af; /* Soft gray for inactive */
+  gap: 12px;
+  transition: 0.2s;
+}
+
+.navItem:hover {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.active {
+  background-color: #1e1b4b; /* Subtle dark indigo */
+  color: #6366f1;
+  border-right: 4px solid #6366f1;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.linkName {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.footer {
+  padding: 1.5rem;
+  border-top: 1px solid #1f2937;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  width: 100%;
+}

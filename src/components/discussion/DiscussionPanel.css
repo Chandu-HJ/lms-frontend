@@ -1,0 +1,252 @@
+.discussionWrap {
+  margin-top: 14px;
+  border: 1px solid #d9e2f2;
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 56vh;
+}
+
+.discussionWrap.isWidget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: min(390px, calc(100vw - 24px));
+  max-height: 74vh;
+  overflow: hidden;
+  grid-template-rows: auto 1fr auto;
+  z-index: 80;
+  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.22);
+  min-height: 0;
+}
+
+.discussionLauncher {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 80;
+  border: 1px solid #1d4ed8;
+  background: #1d4ed8;
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.24);
+}
+
+.discussionHeader h3 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.discussionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.discussionHeaderActions {
+  display: flex;
+  gap: 6px;
+}
+
+.discussionHeaderActions button {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #334155;
+  border-radius: 8px;
+  padding: 6px 9px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.discussionComposer,
+.discussionReplyComposer {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.discussionComposeMode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  border-radius: 8px;
+  padding: 7px 9px;
+  color: #1e3a8a;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.discussionComposeMode button {
+  border: 1px solid #93c5fd;
+  background: #fff;
+  color: #1d4ed8;
+  border-radius: 7px;
+  padding: 5px 8px;
+}
+
+.discussionComposer textarea,
+.discussionReplyComposer textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  min-height: 72px;
+  resize: vertical;
+  padding: 10px;
+  font-family: inherit;
+}
+
+.discussionComposer button,
+.discussionReplyComposer button,
+.discussionActions button,
+.discussionMentions button {
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.discussionComposer > button,
+.discussionReplyComposer > button {
+  justify-self: flex-start;
+}
+
+.discussionMentions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.discussionComposerActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.discussionThreads {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+  overflow: auto;
+  align-content: start;
+}
+
+.discussionThread,
+.discussionReply,
+.discussionNode {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+}
+
+.discussionNode {
+  border: none;
+  padding: 0;
+}
+
+.discussionThread.isPinned {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.discussionReply.isBestAnswer {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.discussionItemHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.discussionItemHeader img {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+}
+
+.discussionItemHeader p {
+  margin: 2px 0 0;
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.discussionBadges {
+  margin-left: auto;
+}
+
+.pinBadge,
+.bestBadge {
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.pinBadge {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.bestBadge {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.discussionContent {
+  margin: 10px 0 0;
+  color: #1e293b;
+  white-space: pre-wrap;
+}
+
+.discussionReplyRef {
+  margin-top: 10px;
+  border-left: 3px solid #93c5fd;
+  background: #f8fbff;
+  border-radius: 8px;
+  padding: 6px 9px;
+}
+
+.discussionReplyRef small {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.discussionReplyRef p {
+  margin: 4px 0 0;
+  color: #475569;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.discussionActions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.discussionReplies {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.discussionEmpty {
+  margin: 12px 0 0;
+  color: #64748b;
+}

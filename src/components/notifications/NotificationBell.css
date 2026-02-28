@@ -1,0 +1,141 @@
+.notifRoot {
+  position: relative;
+}
+
+.notifBellButton {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.14);
+  color: #f8fafc;
+  cursor: pointer;
+}
+
+.notifBellButton:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.notifBellIcon {
+  font-size: 1.1rem;
+}
+
+.notifBadge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0 5px;
+}
+
+.notifPanel {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: min(360px, calc(100vw - 24px));
+  border: 1px solid #dbe7ff;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.22);
+  overflow: hidden;
+  z-index: 40;
+}
+
+.notifPanelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.notifPanelHeader h3 {
+  margin: 0;
+  font-size: 0.96rem;
+  color: #0f172a;
+}
+
+.notifSeeAll {
+  border: none;
+  background: none;
+  color: #1d4ed8;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.notifPanelActions {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eef2ff;
+}
+
+.notifMarkAllBtn {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notifMarkAllBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.notifPanelBody {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.notifHint {
+  margin: 0;
+  padding: 14px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.notifItem {
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid #eef2ff;
+  background: #fff;
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.notifItem:hover {
+  background: #f8fbff;
+}
+
+.notifItemUnread {
+  background: #eff6ff;
+}
+
+.notifItemRead {
+  background: #fff;
+}
+
+.notifItemMessage {
+  color: #0f172a;
+  font-size: 0.9rem;
+}
+
+.notifItemTime {
+  color: #64748b;
+  font-size: 0.76rem;
+}

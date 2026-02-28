@@ -1,0 +1,291 @@
+.coverPage {
+  min-height: 100vh;
+  background: #0b5ea2;
+  color: #e7f2ff;
+}
+
+.coverHero {
+  position: relative;
+  min-height: 58vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.coverBackground {
+  position: absolute;
+  inset: 0;
+  background-image: url('/cover-illustration.svg');
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.33;
+}
+
+.coverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 94, 162, 0.2) 0%, rgba(11, 94, 162, 0.85) 80%);
+}
+
+.coverInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 22px 0;
+}
+
+.coverTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.coverBrand {
+  margin: 0;
+  color: #e6f2ff;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.coverTopActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coverTopBtn {
+  border: 1px solid #b9d9ff;
+  background: transparent;
+  color: #eff7ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.coverTopBtnPrimary {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.coverContent {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 44px 0 140px;
+  text-align: center;
+}
+
+.coverKicker {
+  margin: 0 0 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #d6e9ff;
+}
+
+.coverContent h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3.7vw, 2.9rem);
+  line-height: 1.18;
+  font-weight: 700;
+}
+
+.coverText {
+  margin: 14px auto 0;
+  max-width: 640px;
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  line-height: 1.5;
+  color: #dcecff;
+}
+
+.coverCta {
+  margin-top: 24px;
+  min-width: 170px;
+  padding: 11px 18px;
+  border: 1px solid #d4e8ff;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f3f9ff;
+  font-size: 0.96rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.coverVideoSection {
+  position: relative;
+  z-index: 4;
+  padding: 0 22px 34px;
+  margin-top: -100px;
+}
+
+.coverVideoFrame {
+  max-width: 980px;
+  margin: 0 auto;
+  border: 1px solid #b8d5f4;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f2f7fd;
+  box-shadow: 0 22px 45px rgba(4, 36, 67, 0.32);
+}
+
+.coverVideoTop {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  background: #d8e4f2;
+  border-bottom: 1px solid #c8d8ea;
+}
+
+.coverVideoTop span {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.coverVideoTop span:nth-child(1) {
+  background: #ff6d61;
+}
+
+.coverVideoTop span:nth-child(2) {
+  background: #ffcc4d;
+}
+
+.coverVideoTop span:nth-child(3) {
+  background: #42c95c;
+}
+
+.coverVideo {
+  width: 100%;
+  display: block;
+  background: #0b1220;
+}
+
+.aboutSection {
+  background: #7d95ae;
+  opacity: 0.8;
+  color: #fcfcfc;
+  padding: 58px 22px 56px;
+  border-radius: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+
+.aboutInner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.aboutInner h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+}
+
+.aboutText {
+  margin: 12px 0 0;
+  max-width: 860px;
+  color: #fefefe;
+  line-height: 1.65;
+}
+
+.rolesGrid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.roleCard {
+  border: 1px solid #dbe4f2;
+  border-radius: 12px;
+  padding: 16px;
+  background: #f5f9ff;
+}
+
+.roleCard h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  color: #0f172a;
+}
+
+.roleCard p {
+  margin: 8px 0 0;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.coverFooter {
+  background: #393b3e;
+  color: #d6deea;
+  padding: 16px 22px;
+}
+
+.coverFooterInner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.coverFooterInner p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.coverFooterInner span {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .coverHero {
+    min-height: 54vh;
+  }
+
+  .coverInner {
+    padding: 14px 16px 0;
+  }
+
+  .coverContent {
+    padding: 30px 0 84px;
+  }
+
+  .coverTopBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .coverVideoSection {
+    margin-top: -72px;
+    padding: 0 14px 22px;
+  }
+
+  .aboutSection {
+    padding: 42px 14px 38px;
+  }
+
+  .rolesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .coverFooter {
+    padding: 14px;
+  }
+
+  .coverFooterInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

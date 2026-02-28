@@ -1,0 +1,83 @@
+.adminCard {
+  background: #fff;
+  border: 1px solid #d9e2f2;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.adminCard h2 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.adminMuted {
+  margin: 0;
+  color: #64748b;
+}
+
+.adminUserFilters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.adminUserSearch {
+  width: 100%;
+  max-width: 420px;
+  height: 38px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+.adminUserFilters select {
+  height: 38px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+.adminTableWrap {
+  overflow-x: auto;
+}
+
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adminTable th,
+.adminTable td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.adminUserCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminUserCell img {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+}
+
+.adminTable select {
+  height: 34px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
+@media (max-width: 768px) {
+  .adminUserFilters {
+    flex-direction: column;
+  }
+
+  .adminUserSearch {
+    max-width: 100%;
+  }
+}

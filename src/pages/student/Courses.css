@@ -1,0 +1,221 @@
+.studentCoursesWrap {
+  background: #fff;
+  border: 1px solid #d9e2f2;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.studentCoursesWrap h2 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.studentCourseFilters {
+  display: grid;
+  grid-template-columns: 1fr 220px 180px auto;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.studentCourseInput,
+.studentCourseSelect {
+  height: 42px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0 12px;
+}
+
+.studentCoursesMessage {
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  padding: 12px;
+  color: #334155;
+}
+
+.studentCoursesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.studentCoursesList {
+  display: grid;
+  gap: 12px;
+}
+
+.studentViewToggle {
+  display: flex;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 42px;
+}
+
+.studentViewBtn {
+  border: none;
+  background: #fff;
+  color: #334155;
+  padding: 0 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.studentViewBtn.active {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.studentCourseItem {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.studentCourseItem.isClickable {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.studentCourseItem.isClickable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.1);
+}
+
+.studentCourseItem.isClickable:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.studentCourseItem img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.studentCourseItem div {
+  padding: 12px;
+}
+
+.studentCourseItemList {
+  display: grid;
+  grid-template-columns: 110px minmax(220px, 2fr) 1.3fr auto auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-left: none;
+  border-radius: 12px;
+}
+
+.studentCourseItem h3 {
+  margin: 0 0 6px;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.studentCourseItem p {
+  margin: 0 0 8px;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.studentCourseMetaLine {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.studentCourseChip {
+  border: 1px solid #d1d9e6;
+  background: #f8fafc;
+  color: #334155;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.studentCourseInstructor {
+  margin: 0 0 8px;
+  font-size: 0.84rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.studentCourseItem span {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.studentListLevel {
+  font-size: 0.74rem;
+  color: #475569;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.studentListTitle {
+  margin: 0;
+  font-size: 0.95rem !important;
+  font-weight: 700;
+  color: #0f172a !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studentListInstructor {
+  margin: 0;
+  font-size: 0.84rem !important;
+  color: #334155 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studentListType {
+  margin-left: auto;
+}
+
+.studentListPrice {
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.studentListBtn {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .studentCourseFilters {
+    grid-template-columns: 1fr;
+  }
+
+  .studentViewToggle {
+    width: fit-content;
+  }
+
+  .studentCourseItemList {
+    grid-template-columns: 1fr auto;
+    row-gap: 8px;
+  }
+
+  .studentListTitle,
+  .studentListInstructor {
+    grid-column: 1 / -1;
+  }
+
+  .studentListType {
+    margin-left: 0;
+  }
+}

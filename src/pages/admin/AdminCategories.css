@@ -1,0 +1,65 @@
+.adminCard {
+  background: #fff;
+  border: 1px solid #d9e2f2;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.adminCard h2 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.adminCategoryForm {
+  display: flex;
+  gap: 10px;
+}
+
+.adminCategoryForm input {
+  flex: 1;
+  height: 42px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0 12px;
+}
+
+.adminCategoryForm button {
+  border: 1px solid #1d4ed8;
+  background: #1d4ed8;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.adminMessage {
+  margin-top: 12px;
+  color: #334155;
+}
+
+.adminCategoryListWrap {
+  margin-top: 18px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 14px;
+}
+
+.adminCategoryListWrap h3 {
+  margin: 0 0 10px;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.adminCategoryList {
+  margin: 0;
+  padding-left: 18px;
+  color: #334155;
+  display: grid;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .adminCategoryForm {
+    flex-direction: column;
+  }
+}

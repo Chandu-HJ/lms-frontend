@@ -1,0 +1,32 @@
+.adminCard {
+  background: #fff;
+  border: 1px solid #d9e2f2;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.adminCard h2 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.adminMuted {
+  margin: 0;
+  color: #64748b;
+}
+
+.adminTableWrap {
+  overflow-x: auto;
+}
+
+.adminTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adminTable th,
+.adminTable td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
