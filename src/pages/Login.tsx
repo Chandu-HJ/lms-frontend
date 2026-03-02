@@ -15,8 +15,13 @@ const Login = () => {
 
   const validate = () => {
     const newErrors: { email?: string; password?: string } = {};
-    if (!email) newErrors.email = "Email is required";
-    if (!password) newErrors.password = "Password is required";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!emailRegex.test(email)) newErrors.email = "Enter a valid email";
+    if (!passwordRegex.test(password)) {
+      newErrors.password = "Password must be at least 8 characters and include uppercase, lowercase, number and special character";
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };

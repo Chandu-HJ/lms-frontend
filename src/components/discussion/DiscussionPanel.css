@@ -106,8 +106,7 @@
 
 .discussionComposer button,
 .discussionReplyComposer button,
-.discussionActions button,
-.discussionMentions button {
+.discussionActions button {
   border: 1px solid #cbd5e1;
   background: #f8fafc;
   color: #1e293b;
@@ -120,12 +119,6 @@
 .discussionComposer > button,
 .discussionReplyComposer > button {
   justify-self: flex-start;
-}
-
-.discussionMentions {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
 }
 
 .discussionComposerActions {
@@ -156,11 +149,6 @@
   padding: 0;
 }
 
-.discussionThread.isPinned {
-  border-color: #f59e0b;
-  background: #fffbeb;
-}
-
 .discussionReply.isBestAnswer {
   border-color: #22c55e;
   background: #f0fdf4;
@@ -188,17 +176,11 @@
   margin-left: auto;
 }
 
-.pinBadge,
 .bestBadge {
   border-radius: 999px;
   padding: 3px 8px;
   font-size: 0.72rem;
   font-weight: 700;
-}
-
-.pinBadge {
-  background: #fef3c7;
-  color: #92400e;
 }
 
 .bestBadge {

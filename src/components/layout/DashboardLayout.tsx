@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import styles from './Dashboard.module.css';
 
 const DashboardLayout = () => {
-  // You would typically get the role from your Auth state 
+  //get the role from your Auth state 
   const userRole = 'INSTRUCTOR'; 
 
   return (
@@ -19,7 +19,7 @@ const DashboardLayout = () => {
         {/* This is where your Dashboard page content appears */}
         <main className={styles.pageContent}>
           <Outlet />
-        </main>  {/* ✅ fixed */}
+        </main>  {/*  fixed */}
       </div>
     </div>
   );

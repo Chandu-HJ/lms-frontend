@@ -3,6 +3,7 @@ import './CoverPage.css';
 
 const CoverPage = () => {
   const navigate = useNavigate();
+  const videoSrc = `${import.meta.env.BASE_URL}lmsRecording.mp4`;
 
   return (
     <main className="coverPage">
@@ -43,7 +44,7 @@ const CoverPage = () => {
             <span />
             <span />
           </div>
-          <video className="coverVideo" src="/lmsRecording.mp4" preload="metadata" autoPlay muted controls loop/>
+          <video className="coverVideo" src={videoSrc} preload="metadata" autoPlay muted  loop />
         </div>
       </section>
 

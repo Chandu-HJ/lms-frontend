@@ -6,7 +6,6 @@ import {
   getCourseDiscussion,
   postCourseDiscussion,
   toggleDiscussionBestAnswer,
-  toggleDiscussionPin,
 } from '../../api/discussion.service';
 import { type DiscussionMessage } from '../../interfaces/discussion.types';
 import { resolveImageSrc } from '../../utils/media';
@@ -35,19 +34,6 @@ const sortMessagesAscending = (messages: DiscussionMessage[]): DiscussionMessage
       ...message,
       replies: sortMessagesAscending(message.replies ?? []),
     }));
-
-const getMentionToken = (value: string): string | null => {
-  const parts = value.split(/\s+/);
-  const token = parts[parts.length - 1];
-  if (!token?.startsWith('@')) return null;
-  return token.slice(1).toLowerCase();
-};
-
-const replaceMentionToken = (value: string, mentionName: string): string => {
-  const parts = value.split(/\s+/);
-  parts[parts.length - 1] = `@${mentionName}`;
-  return `${parts.join(' ')} `;
-};
 
 const DiscussionPanel = ({ courseId, role, mode = 'WIDGET' }: DiscussionPanelProps) => {
   const navigate = useNavigate();
@@ -108,33 +94,12 @@ const DiscussionPanel = ({ courseId, role, mode = 'WIDGET' }: DiscussionPanelPro
     };
   }, [courseId, role]);
 
-  const participantNames = useMemo(() => {
-    const set = new Set<string>();
-    const collect = (messages: DiscussionMessage[]) => {
-      messages.forEach((message) => {
-        const firstName = message.senderName?.split(' ')[0]?.trim();
-        if (firstName) set.add(firstName);
-        if (message.replies?.length) collect(message.replies);
-      });
-    };
-    collect(threads);
-    return Array.from(set).sort((a, b) => a.localeCompare(b));
-  }, [threads]);
-
   const sortedThreads = useMemo(() => sortMessagesAscending(threads), [threads]);
 
   useEffect(() => {
     if (loading) return;
     threadEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }, [sortedThreads, loading, isOpen]);
-
-  const messageMentionSuggestions = useMemo(() => {
-    const token = getMentionToken(draftMessage);
-    if (!token) return [];
-    return participantNames
-      .filter((name) => name.toLowerCase().startsWith(token))
-      .slice(0, 6);
-  }, [draftMessage, participantNames]);
 
   const postMessage = async (content: string, parentId?: number) => {
     const trimmed = content.trim();
@@ -149,16 +114,6 @@ const DiscussionPanel = ({ courseId, role, mode = 'WIDGET' }: DiscussionPanelPro
       console.error('Unable to post discussion message', error);
     } finally {
       setSubmitting(false);
-    }
-  };
-
-  const handleTogglePin = async (messageId: number) => {
-    if (role !== 'INSTRUCTOR') return;
-    try {
-      await toggleDiscussionPin(courseId, messageId);
-      await loadDiscussion(false);
-    } catch (error) {
-      console.error('Unable to toggle pin', error);
     }
   };
 
@@ -183,7 +138,7 @@ const DiscussionPanel = ({ courseId, role, mode = 'WIDGET' }: DiscussionPanelPro
     parentMessage?: DiscussionMessage
   ) => (
     <div key={message.id} className="discussionNode" style={{ marginLeft: depth === 0 ? 0 : 16 }}>
-      <article className={`discussionThread ${message.pinned ? 'isPinned' : ''} ${message.bestAnswer ? 'isBestAnswer' : ''}`}>
+      <article className={`discussionThread ${message.bestAnswer ? 'isBestAnswer' : ''}`}>
         <header className="discussionItemHeader">
           <img src={resolveImageSrc(message.senderAvatar)} alt={message.senderName} />
           <div>
@@ -191,7 +146,6 @@ const DiscussionPanel = ({ courseId, role, mode = 'WIDGET' }: DiscussionPanelPro
             <p>{formatDate(message.createdAt)}</p>
           </div>
           <div className="discussionBadges">
-            {message.pinned ? <span className="pinBadge">Pinned</span> : null}
             {message.bestAnswer ? <span className="bestBadge">Best Answer</span> : null}
           </div>
         </header>
@@ -212,11 +166,6 @@ const DiscussionPanel = ({ courseId, role, mode = 'WIDGET' }: DiscussionPanelPro
           >
             Reply
           </button>
-          {role === 'INSTRUCTOR' && message.parentId == null ? (
-            <button type="button" onClick={() => void handleTogglePin(message.id)}>
-              {message.pinned ? 'Unpin' : 'Pin'}
-            </button>
-          ) : null}
           {role === 'INSTRUCTOR' && message.parentId != null ? (
             <button type="button" onClick={() => void handleToggleBestAnswer(message.id)}>
               {message.bestAnswer ? 'Unset Best Answer' : 'Mark Best Answer'}
@@ -283,23 +232,10 @@ const DiscussionPanel = ({ courseId, role, mode = 'WIDGET' }: DiscussionPanelPro
           onChange={(event) => setDraftMessage(event.target.value)}
           placeholder={
             composeTarget
-              ? `Reply to ${composeTarget.senderName}. Use @name to mention someone.`
-              : 'Ask your question. Use @name to mention someone.'
+              ? `Reply to ${composeTarget.senderName}.`
+              : 'Ask your question.'
           }
         />
-        {messageMentionSuggestions.length > 0 && (
-          <div className="discussionMentions">
-            {messageMentionSuggestions.map((name) => (
-              <button
-                type="button"
-                key={name}
-                onClick={() => setDraftMessage((prev) => replaceMentionToken(prev, name))}
-              >
-                @{name}
-              </button>
-            ))}
-          </div>
-        )}
         <div className="discussionComposerActions">
           <button type="button" onClick={() => setComposeTarget(null)}>
             Post Question
