@@ -1,23 +1,35 @@
-import { Navigate, Outlet } from 'react-router-dom';
-import {type UserRole } from "../interfaces/auth.types"
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { type UserRole } from '../interfaces/auth.types';
+import { getSessionUser } from '../utils/authSession';
 
 interface Props {
   allowedRoles: UserRole[];
+  requireActive?: boolean;
 }
 
-const ProtectedRoute = ({ allowedRoles }: Props) => {
-  // Logic to get user from your Global State (Zustand/Redux/Context)
-  const user = { role: 'INSTRUCTOR', isAuthenticated: true }; // Dummy for now
+const ROLE_HOME_PATH: Record<UserRole, string> = {
+  STUDENT: '/student/dashboard',
+  INSTRUCTOR: '/instructor/dashboard',
+  ADMIN: '/admin/users',
+};
 
-  if (!user.isAuthenticated) {
-    return <Navigate to="/login" replace />;
+const ProtectedRoute = ({ allowedRoles, requireActive = true }: Props) => {
+  const location = useLocation();
+  const user = getSessionUser();
+
+  if (!user) {
+    return <Navigate to="/login" replace state={{ from: location.pathname }} />;
   }
 
-  if (!allowedRoles.includes(user.role as UserRole)) {
-    return <Navigate to="/unauthorized" replace />;
+  if (requireActive && user.status !== 'ACTIVE') {
+    return <Navigate to="/account/pending" replace />;
   }
 
-  return <Outlet />; // Renders the child route
+  if (!allowedRoles.includes(user.role)) {
+    return <Navigate to={ROLE_HOME_PATH[user.role]} replace />;
+  }
+
+  return <Outlet />;
 };
 
 export default ProtectedRoute;

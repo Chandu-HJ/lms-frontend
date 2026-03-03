@@ -28,6 +28,7 @@ import AdminCourses from '../pages/admin/AdminCourses';
 import AdminCategories from '../pages/admin/AdminCategories';
 import InstructorLayout from '../components/layout/instructor/InstructorLayout';
 import StudentLayout from '../components/layout/student/StudentLayout';
+import ProtectedRoute from './ProtectedRoute';
 
 const AppRoutes = () => {
   return (
@@ -35,41 +36,52 @@ const AppRoutes = () => {
       <Route path="/" element={<CoverPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/account/pending" element={<AccountPending />} />
-      
-      <Route path="/student" element={<StudentLayout />}>
-        <Route index element={<Navigate to="dashboard" replace />} />
-        <Route path="dashboard" element={<StudentDashboard />} />
-        <Route path="courses" element={<StudentCourses />} />
-        <Route path="courses/:courseId/overview" element={<StudentCourseOverview />} />
-        <Route path="courses/:courseId/learn" element={<StudentCourseLearning />} />
-        <Route path="courses/:courseId/quiz" element={<StudentCourseQuiz />} />
-        <Route path="courses/:courseId/discussion" element={<StudentCourseDiscussion />} />
-        <Route path="enrolled-courses" element={<StudentEnrolledCourses />} />
-        <Route path="profile/setup" element={<StudentProfileSetup />} />
-        <Route path="profile/edit" element={<StudentProfileEdit />} />
-        <Route path="notifications" element={<NotificationsPage role="STUDENT" />} />
+
+      <Route element={<ProtectedRoute allowedRoles={['STUDENT', 'INSTRUCTOR', 'ADMIN']} requireActive={false} />}>
+        <Route path="/account/pending" element={<AccountPending />} />
       </Route>
-      <Route path="/instructor" element={<InstructorLayout />}>
-        <Route index element={<Navigate to="dashboard" replace />} />
-        <Route path="dashboard" element={<InstructorDashboard />} />
-        <Route path="courses" element={<MyCourses />} />
-        <Route path="courses/:courseId/modules" element={<CourseModules />} />
-        <Route path="courses/:courseId/progress-report" element={<CourseProgressReport />} />
-        <Route path="courses/:courseId/quiz" element={<CourseQuiz />} />
-        <Route path="courses/:courseId/discussion" element={<InstructorCourseDiscussion />} />
-        <Route path="create" element={<CreateCourse />} />
-        <Route path="business-stats" element={<BusinessStats />} />
-        <Route path="notifications" element={<NotificationsPage role="INSTRUCTOR" />} />
+
+      <Route element={<ProtectedRoute allowedRoles={['STUDENT']} />}>
+        <Route path="/student" element={<StudentLayout />}>
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard" element={<StudentDashboard />} />
+          <Route path="courses" element={<StudentCourses />} />
+          <Route path="courses/:courseId/overview" element={<StudentCourseOverview />} />
+          <Route path="courses/:courseId/learn" element={<StudentCourseLearning />} />
+          <Route path="courses/:courseId/quiz" element={<StudentCourseQuiz />} />
+          <Route path="courses/:courseId/discussion" element={<StudentCourseDiscussion />} />
+          <Route path="enrolled-courses" element={<StudentEnrolledCourses />} />
+          <Route path="profile/setup" element={<StudentProfileSetup />} />
+          <Route path="profile/edit" element={<StudentProfileEdit />} />
+          <Route path="notifications" element={<NotificationsPage role="STUDENT" />} />
+        </Route>
       </Route>
-      <Route path="/admin" element={<AdminLayout />}>
-        <Route index element={<Navigate to="users" replace />} />
-        <Route path="dashboard" element={<Navigate to="/admin/users" replace />} />
-        <Route path="users" element={<AdminUsers />} />
-        <Route path="pending-users" element={<AdminPendingUsers />} />
-        <Route path="courses" element={<AdminCourses />} />
-        <Route path="categories" element={<AdminCategories />} />
-        <Route path="notifications" element={<NotificationsPage role="ADMIN" />} />
+
+      <Route element={<ProtectedRoute allowedRoles={['INSTRUCTOR']} />}>
+        <Route path="/instructor" element={<InstructorLayout />}>
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard" element={<InstructorDashboard />} />
+          <Route path="courses" element={<MyCourses />} />
+          <Route path="courses/:courseId/modules" element={<CourseModules />} />
+          <Route path="courses/:courseId/progress-report" element={<CourseProgressReport />} />
+          <Route path="courses/:courseId/quiz" element={<CourseQuiz />} />
+          <Route path="courses/:courseId/discussion" element={<InstructorCourseDiscussion />} />
+          <Route path="create" element={<CreateCourse />} />
+          <Route path="business-stats" element={<BusinessStats />} />
+          <Route path="notifications" element={<NotificationsPage role="INSTRUCTOR" />} />
+        </Route>
+      </Route>
+
+      <Route element={<ProtectedRoute allowedRoles={['ADMIN']} />}>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="users" replace />} />
+          <Route path="dashboard" element={<Navigate to="/admin/users" replace />} />
+          <Route path="users" element={<AdminUsers />} />
+          <Route path="pending-users" element={<AdminPendingUsers />} />
+          <Route path="courses" element={<AdminCourses />} />
+          <Route path="categories" element={<AdminCategories />} />
+          <Route path="notifications" element={<NotificationsPage role="ADMIN" />} />
+        </Route>
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
